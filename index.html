@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute Assignments</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar d-flex flex-column" id="sidebar">
+        <!-- User Profile -->
+        <div class="user-profile d-flex align-items-center mb-4 pb-3 border-bottom border-white border-opacity-25">
+            <img src="assets/images/profile.png" alt="User" class="rounded-circle me-3 user-avatar" style="width: 80px; height: 80px;">
+            <div class="user-info">
+                <h6 class="mb-0 text-white fw-bold">Pramod Agrawal</h6>
+                <small class="text-white-50">Global Admin</small>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <ul class="nav nav-pills flex-column mb-auto nav-custom">
+            <li class="nav-item mb-2">
+                <a href="#" class="nav-link text-white nav-link-custom">
+                    <span class="fw-bold">Master Data Attributes</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-white nav-link-custom active">
+                    <i class="fa-solid fa-house me-3"></i>
+                    <span>Home Page</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-white nav-link-custom">
+                    <i class="fa-solid fa-gear me-3"></i>
+                    <span>Manage Attributes</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-white nav-link-custom">
+                    <i class="fa-solid fa-lock me-3"></i>
+                    <span>Security</span>
+                </a>
+            </li>
+        </ul>
+
+        <!-- Logo -->
+        <div class="sidebar-logo mt-auto d-flex align-items-center mb-3">
+            <img src="assets/images/logo.png" alt="Amicus Logo" style="max-width: 300px;">
+        </div>
+
+        <button class="toggle-btn shadow" id="sidebarToggle" aria-label="Toggle Sidebar">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+    </div>
+
+    <!-- Mobile Header -->
+    <div class="mobile-header d-lg-none d-flex align-items-center p-3 shadow-sm bg-white sticky-top">
+        <button class="btn btn-outline-secondary me-3 border-0" id="mobileSidebarToggle">
+            <i class="fa-solid fa-bars fs-4 text-primary-color"></i>
+        </button>
+        <h5 class="mb-0 text-primary-color fw-bold">Attribute App</h5>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content" id="mainContent">
+        <div class="container-fluid p-4 p-lg-5">
+            <!-- Header section -->
+            <div class="d-flex flex-column flex-xl-row justify-content-between align-items-xl-center mb-4 border-bottom pb-4">
+                <div class="d-flex align-items-center mb-4 mb-xl-0">
+                    <div>
+                        <h2 class="h3 fw-bold text-dark mb-1">Attribute Assignments</h2>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb mb-0">
+                                <li class="breadcrumb-item"><a href="#" class="text-primary-color text-decoration-none fw-semibold">Homepage</a></li>
+                                <li class="breadcrumb-item"><a href="#" class="text-primary-color text-decoration-none fw-semibold">Listings</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><a href="#" class="text-primary-color text-decoration-underline fw-semibold">100004</a></li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+                <div class="action-buttons d-flex gap-3 flex-wrap">
+                    <button class="btn btn-outline-danger btn-custom-outline-danger rounded-pill px-4">
+                        <i class="fa-regular fa-trash-can me-2"></i>Remove all mappings
+                    </button>
+                    <button class="btn btn-outline-primary-custom rounded-pill px-4">Cancel</button>
+                    <button class="btn btn-primary-custom rounded-pill px-4">
+                        <i class="fa-regular fa-floppy-disk me-2"></i>Save
+                    </button>
+                </div>
+            </div>
+
+            <!-- Info Grid -->
+            <div class="row g-4 mb-5 info-grid">
+                <div class="col-sm-6 col-md-3">
+                    <label class="info-label">Business Unit</label>
+                    <div class="info-value">Paper</div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <label class="info-label">Company Code</label>
+                    <div class="info-value">E_ANZ</div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <label class="info-label">Customer Parent</label>
+                    <div class="info-value">Santa Maria Guarapuava PR (BR)</div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <label class="info-label">Customer</label>
+                    <div class="info-value">E_050BS</div>
+                </div>
+                
+                <div class="col-sm-6 col-md-3">
+                    <label class="info-label">Customer Industry</label>
+                    <div class="info-value">Regional Waters</div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <label class="info-label">Customer Area</label>
+                    <div class="info-value">E_200PT3</div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <label class="info-label">Employee</label>
+                    <div class="info-value">Riaz Abdul Karrim</div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <label class="info-label">Material</label>
+                    <div class="info-value">BUFLOC 5031</div>
+                </div>
+                
+                <div class="col-sm-6 col-md-3">
+                    <label class="info-label">TX Industry</label>
+                    <div class="info-value">Regional Waters</div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <label class="info-label">Rolling 12 month sale (USD)</label>
+                    <div class="info-value">22135.00</div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <label class="info-label text-dark fw-bold mb-2">Additional Information</label>
+                    <input type="text" class="form-control" placeholder="Leave a note here">
+                </div>
+            </div>
+
+            <hr class="mb-4">
+
+            <!-- Accordion Actions -->
+            <div class="d-flex justify-content-end mb-3">
+                <button class="btn btn-link text-primary-color text-decoration-underline fw-semibold me-3 px-0" id="collapseAllBtn">Collapse All</button>
+                <button class="btn btn-link text-primary-color text-decoration-underline fw-semibold px-0" id="expandAllBtn">Expand All</button>
+            </div>
+
+            <!-- Accordion -->
+            <div class="accordion custom-accordion" id="attributeAccordion">
+                
+                <!-- Sales Item -->
+                <div class="accordion-item shadow-sm mb-4 border rounded">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button collapsed px-4 py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            <div class="d-flex align-items-center w-100 me-3">
+                                <i class="fa-solid fa-circle-plus text-primary-color fs-5 me-3 accordion-icon"></i>
+                                <span class="fs-5 fw-bold text-dark">Sales</span>
+                                
+                                <div class="ms-auto d-flex align-items-center gap-4 d-none d-lg-flex">
+                                    <div class="custom-select-wrapper" onclick="event.stopPropagation()">
+                                        <select class="form-select border-1 text-dark form-select-sm px-3 py-2 custom-status-select" aria-label="Status">
+                                            <option selected>Active</option>
+                                            <option value="1">Pending Validation</option>
+                                        </select>
+                                    </div>
+                                    <div class="text-muted small ms-4">
+                                        <span class="fw-bold text-dark">Validated</span> <span class="text-primary-color">jchauhan / 25 Sep 2020</span>
+                                    </div>
+                                    <div class="text-muted small ms-3">
+                                        <span class="fw-bold text-dark">Updated</span> <span class="text-primary-color">jchauhan / 25 Sep 2020</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
+                        <div class="accordion-body px-4 pb-4 pt-4 border-top">
+                            <div class="d-lg-none mb-4 p-3 bg-light rounded">
+                                <div class="mb-3">
+                                    <select class="form-select border-1 text-dark custom-status-select" aria-label="Status">
+                                        <option selected>Active</option>
+                                        <option value="1">Pending Validation</option>
+                                    </select>
+                                </div>
+                                <div class="text-muted small mb-2">
+                                    <span class="fw-bold text-dark">Validated</span> <span class="text-primary-color">jchauhan / 25 Sep 2020</span>
+                                </div>
+                                <div class="text-muted small">
+                                    <span class="fw-bold text-dark">Updated</span> <span class="text-primary-color">jchauhan / 25 Sep 2020</span>
+                                </div>
+                            </div>
+
+                            <div class="row g-4">
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="form-label fw-bold text-dark small">Application Group <span class="text-danger">*</span></label>
+                                    <select class="form-select text-muted form-select-custom">
+                                        <option selected>Choose Option</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="form-label fw-bold text-dark small">Strategic move <span class="text-danger">*</span></label>
+                                    <select class="form-select text-muted form-select-custom">
+                                        <option selected>Choose Option</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="form-label fw-bold text-dark small">S&D1 <span class="text-danger">*</span></label>
+                                    <select class="form-select text-muted form-select-custom">
+                                        <option selected>Choose Option</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="form-label fw-bold text-dark small">S&D 2</label>
+                                    <select class="form-select text-muted form-select-custom">
+                                        <option selected>Choose Option</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="form-label fw-bold text-dark small">S&D 3</label>
+                                    <select class="form-select text-muted form-select-custom">
+                                        <option selected>Choose Option</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="form-label fw-bold text-dark small">S&D 4</label>
+                                    <select class="form-select text-muted form-select-custom">
+                                        <option selected>Choose Option</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Strategic Marketing Item -->
+                <div class="accordion-item shadow-sm mb-4 border rounded">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed px-4 py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <div class="d-flex align-items-center w-100 me-3">
+                                <i class="fa-solid fa-circle-plus text-primary-color fs-5 me-3 accordion-icon"></i>
+                                <span class="fs-5 fw-bold text-dark">Strategic Marketing</span>
+                                
+                                <div class="ms-auto d-flex align-items-center gap-4 d-none d-lg-flex">
+                                    <div class="custom-select-wrapper" onclick="event.stopPropagation()">
+                                        <select class="form-select border-1 text-dark form-select-sm px-3 py-2 custom-status-select" aria-label="Status">
+                                            <option selected>Pending Validation</option>
+                                            <option value="1">Active</option>
+                                        </select>
+                                    </div>
+                                    <div class="text-muted small ms-4">
+                                        <span class="fw-bold text-dark">Validated</span> N/A
+                                    </div>
+                                    <div class="text-muted small ms-3">
+                                        <span class="fw-bold text-dark">Updated</span> <span class="text-primary-color">jchauhan / 25 Sep 2020</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
+                        <div class="accordion-body px-4 pb-4 pt-4 border-top">
+                            <div class="d-lg-none mb-4 p-3 bg-light rounded">
+                                <div class="mb-3">
+                                    <select class="form-select border-1 text-dark custom-status-select" aria-label="Status">
+                                        <option selected>Pending Validation</option>
+                                        <option value="1">Active</option>
+                                    </select>
+                                </div>
+                                <div class="text-muted small mb-2">
+                                    <span class="fw-bold text-dark">Validated</span> N/A
+                                </div>
+                                <div class="text-muted small">
+                                    <span class="fw-bold text-dark">Updated</span> <span class="text-primary-color">jchauhan / 25 Sep 2020</span>
+                                </div>
+                            </div>
+
+                            <div class="row g-4">
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="form-label fw-bold text-dark small">Application Group <span class="text-danger">*</span></label>
+                                    <select class="form-select text-muted form-select-custom">
+                                        <option selected>Choose Option</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="form-label fw-bold text-dark small">Strategic move <span class="text-danger">*</span></label>
+                                    <select class="form-select text-muted form-select-custom">
+                                        <option selected>Choose Option</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="form-label fw-bold text-dark small">S&D1 <span class="text-danger">*</span></label>
+                                    <select class="form-select text-muted form-select-custom">
+                                        <option selected>Choose Option</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="form-label fw-bold text-dark small">S&D 2</label>
+                                    <select class="form-select text-muted form-select-custom">
+                                        <option selected>Choose Option</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="form-label fw-bold text-dark small">S&D 3</label>
+                                    <select class="form-select text-muted form-select-custom">
+                                        <option selected>Choose Option</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="form-label fw-bold text-dark small">S&D 4</label>
+                                    <select class="form-select text-muted form-select-custom">
+                                        <option selected>Choose Option</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Supply Chain Item -->
+                <div class="accordion-item shadow-sm mb-4 border rounded">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed px-4 py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <div class="d-flex align-items-center w-100 me-3">
+                                <i class="fa-solid fa-circle-plus text-primary-color fs-5 me-3 accordion-icon"></i>
+                                <span class="fs-5 fw-bold text-dark">Supply Chain</span>
+                                
+                                <div class="ms-auto d-flex align-items-center gap-4 d-none d-lg-flex">
+                                    <div class="custom-select-wrapper" onclick="event.stopPropagation()">
+                                        <select class="form-select border-1 text-dark form-select-sm px-3 py-2 custom-status-select" aria-label="Status">
+                                            <option selected>Active</option>
+                                            <option value="1">Pending Validation</option>
+                                        </select>
+                                    </div>
+                                    <div class="text-muted small ms-4">
+                                        <span class="fw-bold text-dark">Validated</span> N/A
+                                    </div>
+                                    <div class="text-muted small ms-3">
+                                        <span class="fw-bold text-dark">Updated</span> <span class="text-primary-color">jchauhan / 25 Sep 2020</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                        <div class="accordion-body px-4 pb-4 pt-4 border-top">
+                            <div class="d-lg-none mb-4 p-3 bg-light rounded">
+                                <div class="mb-3">
+                                    <select class="form-select border-1 text-dark custom-status-select" aria-label="Status">
+                                        <option selected>Active</option>
+                                        <option value="1">Pending Validation</option>
+                                    </select>
+                                </div>
+                                <div class="text-muted small mb-2">
+                                    <span class="fw-bold text-dark">Validated</span> N/A
+                                </div>
+                                <div class="text-muted small">
+                                    <span class="fw-bold text-dark">Updated</span> <span class="text-primary-color">jchauhan / 25 Sep 2020</span>
+                                </div>
+                            </div>
+
+                            <div class="row g-4">
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="form-label fw-bold text-dark small">Application Group <span class="text-danger">*</span></label>
+                                    <select class="form-select text-muted form-select-custom">
+                                        <option selected>Choose Option</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="form-label fw-bold text-dark small">Strategic move <span class="text-danger">*</span></label>
+                                    <select class="form-select text-muted form-select-custom">
+                                        <option selected>Choose Option</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="form-label fw-bold text-dark small">S&D1 <span class="text-danger">*</span></label>
+                                    <select class="form-select text-muted form-select-custom">
+                                        <option selected>Choose Option</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="form-label fw-bold text-dark small">S&D 2</label>
+                                    <select class="form-select text-muted form-select-custom">
+                                        <option selected>Choose Option</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="form-label fw-bold text-dark small">S&D 3</label>
+                                    <select class="form-select text-muted form-select-custom">
+                                        <option selected>Choose Option</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="form-label fw-bold text-dark small">S&D 4</label>
+                                    <select class="form-select text-muted form-select-custom">
+                                        <option selected>Choose Option</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Finance Item -->
+                <div class="accordion-item shadow-sm mb-4 border rounded">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed px-4 py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            <div class="d-flex align-items-center w-100 me-3">
+                                <i class="fa-solid fa-circle-plus text-primary-color fs-5 me-3 accordion-icon"></i>
+                                <span class="fs-5 fw-bold text-dark">Finance</span>
+                                
+                                <div class="ms-auto d-flex align-items-center gap-4 d-none d-lg-flex">
+                                    <div class="custom-select-wrapper" onclick="event.stopPropagation()">
+                                        <select class="form-select border-1 text-dark form-select-sm px-3 py-2 custom-status-select" aria-label="Status">
+                                            <option selected>Pending Validation</option>
+                                            <option value="1">Active</option>
+                                        </select>
+                                    </div>
+                                    <div class="text-muted small ms-4">
+                                        <span class="fw-bold text-dark">Validated</span> N/A
+                                    </div>
+                                    <div class="text-muted small ms-3">
+                                        <span class="fw-bold text-dark">Updated</span> <span class="text-primary-color">jchauhan / 25 Sep 2020</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour">
+                        <div class="accordion-body px-4 pb-4 pt-4 border-top">
+                            <div class="d-lg-none mb-4 p-3 bg-light rounded">
+                                <div class="mb-3">
+                                    <select class="form-select border-1 text-dark custom-status-select" aria-label="Status">
+                                        <option selected>Pending Validation</option>
+                                        <option value="1">Active</option>
+                                    </select>
+                                </div>
+                                <div class="text-muted small mb-2">
+                                    <span class="fw-bold text-dark">Validated</span> N/A
+                                </div>
+                                <div class="text-muted small">
+                                    <span class="fw-bold text-dark">Updated</span> <span class="text-primary-color">jchauhan / 25 Sep 2020</span>
+                                </div>
+                            </div>
+
+                            <div class="row g-4">
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="form-label fw-bold text-dark small">Application Group <span class="text-danger">*</span></label>
+                                    <select class="form-select text-muted form-select-custom">
+                                        <option selected>Choose Option</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="form-label fw-bold text-dark small">Strategic move <span class="text-danger">*</span></label>
+                                    <select class="form-select text-muted form-select-custom">
+                                        <option selected>Choose Option</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="form-label fw-bold text-dark small">S&D1 <span class="text-danger">*</span></label>
+                                    <select class="form-select text-muted form-select-custom">
+                                        <option selected>Choose Option</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="form-label fw-bold text-dark small">S&D 2</label>
+                                    <select class="form-select text-muted form-select-custom">
+                                        <option selected>Choose Option</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="form-label fw-bold text-dark small">S&D 3</label>
+                                    <select class="form-select text-muted form-select-custom">
+                                        <option selected>Choose Option</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="form-label fw-bold text-dark small">S&D 4</label>
+                                    <select class="form-select text-muted form-select-custom">
+                                        <option selected>Choose Option</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Human Resources Item -->
+                <div class="accordion-item shadow-sm mb-4 border rounded">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed px-4 py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            <div class="d-flex align-items-center w-100 me-3">
+                                <i class="fa-solid fa-circle-plus text-primary-color fs-5 me-3 accordion-icon"></i>
+                                <span class="fs-5 fw-bold text-dark">Human Resources</span>
+                                
+                                <div class="ms-auto d-flex align-items-center gap-4 d-none d-lg-flex">
+                                    <div class="custom-select-wrapper" onclick="event.stopPropagation()">
+                                        <select class="form-select border-1 text-dark form-select-sm px-3 py-2 custom-status-select" aria-label="Status">
+                                            <option selected>Pending Validation</option>
+                                            <option value="1">Active</option>
+                                        </select>
+                                    </div>
+                                    <div class="text-muted small ms-4">
+                                        <span class="fw-bold text-dark">Validated</span> N/A
+                                    </div>
+                                    <div class="text-muted small ms-3">
+                                        <span class="fw-bold text-dark">Updated</span> <span class="text-primary-color">jchauhan / 25 Sep 2020</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive">
+                        <div class="accordion-body px-4 pb-4 pt-4 border-top">
+                            <div class="d-lg-none mb-4 p-3 bg-light rounded">
+                                <div class="mb-3">
+                                    <select class="form-select border-1 text-dark custom-status-select" aria-label="Status">
+                                        <option selected>Pending Validation</option>
+                                        <option value="1">Active</option>
+                                    </select>
+                                </div>
+                                <div class="text-muted small mb-2">
+                                    <span class="fw-bold text-dark">Validated</span> N/A
+                                </div>
+                                <div class="text-muted small">
+                                    <span class="fw-bold text-dark">Updated</span> <span class="text-primary-color">jchauhan / 25 Sep 2020</span>
+                                </div>
+                            </div>
+
+                            <div class="row g-4">
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="form-label fw-bold text-dark small">Application Group <span class="text-danger">*</span></label>
+                                    <select class="form-select text-muted form-select-custom">
+                                        <option selected>Choose Option</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="form-label fw-bold text-dark small">Strategic move <span class="text-danger">*</span></label>
+                                    <select class="form-select text-muted form-select-custom">
+                                        <option selected>Choose Option</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="form-label fw-bold text-dark small">S&D1 <span class="text-danger">*</span></label>
+                                    <select class="form-select text-muted form-select-custom">
+                                        <option selected>Choose Option</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="form-label fw-bold text-dark small">S&D 2</label>
+                                    <select class="form-select text-muted form-select-custom">
+                                        <option selected>Choose Option</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="form-label fw-bold text-dark small">S&D 3</label>
+                                    <select class="form-select text-muted form-select-custom">
+                                        <option selected>Choose Option</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="form-label fw-bold text-dark small">S&D 4</label>
+                                    <select class="form-select text-muted form-select-custom">
+                                        <option selected>Choose Option</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Backdrop for mobile sidebar -->
+    <div class="sidebar-backdrop d-lg-none" id="sidebarBackdrop"></div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>

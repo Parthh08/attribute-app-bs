@@ -1,0 +1,266 @@
+:root {
+    --primary-color: #00987C;
+    --primary-color-hover: #007a63;
+    --sidebar-width: 280px;
+    --bg-color: #fafafa;
+    --text-muted: #6c757d;
+    --border-color: #e0e0e0;
+    --danger-color: #f06a59;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    overflow-x: hidden;
+}
+
+.text-primary-color {
+    color: var(--primary-color) !important;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    padding: 1.5rem 0;
+    transition: all 0.3s ease;
+    z-index: 1040;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar.collapsed {
+    transform: translateX(-100%);
+}
+
+.sidebar .user-profile, .sidebar .sidebar-logo {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    flex-shrink: 0;
+}
+
+.user-avatar {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
+.nav-custom {
+    overflow-y: auto;
+    flex-grow: 1;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* Custom Scrollbar for sidebar */
+.nav-custom::-webkit-scrollbar {
+    width: 6px;
+}
+.nav-custom::-webkit-scrollbar-track {
+    background: transparent;
+}
+.nav-custom::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+}
+
+.nav-custom .nav-item {
+    margin-bottom: 0.2rem;
+}
+
+.nav-link-custom {
+    border-radius: 6px;
+    padding: 1rem 1.2rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    opacity: 0.85;
+    font-size: 0.95rem;
+}
+
+.nav-link-custom:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    opacity: 1;
+}
+
+.nav-link-custom.active {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    opacity: 1;
+    border-left: 4px solid #fff;
+}
+
+.toggle-btn {
+    position: absolute;
+    right: -16px;
+    top: 70%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #8cc63f;
+    color: #111;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 1050;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.sidebar.collapsed .toggle-btn {
+    transform: translateY(-50%) translateX(16px);
+}
+
+.sidebar.collapsed .toggle-btn i {
+    transform: rotate(180deg);
+}
+
+/* Main Content Styles */
+.main-content {
+    margin-left: var(--sidebar-width);
+    transition: all 0.3s ease;
+    min-height: 100vh;
+}
+
+.main-content.expanded {
+    margin-left: 0;
+}
+
+/* Buttons */
+.btn-custom-outline-danger {
+    color: var(--danger-color);
+    border-color: var(--danger-color);
+    font-weight: 600;
+}
+
+.btn-custom-outline-danger:hover {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.btn-outline-primary-custom {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    background: transparent;
+    font-weight: 600;
+    border: 1px solid var(--primary-color);
+}
+
+.btn-outline-primary-custom:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary-custom {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+}
+
+.btn-primary-custom:hover {
+    background-color: var(--primary-color-hover);
+    color: white;
+}
+
+/* Info Grid */
+.info-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.3rem;
+    display: block;
+}
+
+.info-value {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Accordion */
+.custom-accordion .accordion-item {
+    background-color: #fff;
+    border-color: var(--border-color) !important;
+}
+
+.custom-accordion .accordion-button {
+    background-color: #fff !important;
+    box-shadow: none !important;
+    color: inherit;
+}
+
+.custom-accordion .accordion-button::after {
+    display: none; /* Hide default arrow */
+}
+
+/* Custom Status Select */
+.custom-status-select {
+    border-color: rgba(0, 152, 124, 0.3) !important;
+    border-radius: 6px;
+    font-weight: 500;
+    color: #333 !important;
+    width: 220px;
+    background-color: #fff;
+}
+.custom-status-select:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 152, 124, 0.25);
+    border-color: var(--primary-color) !important;
+}
+
+.form-select-custom {
+    border-color: var(--border-color);
+    border-radius: 6px;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+}
+.form-select-custom:focus {
+    border-color: var(--primary-color);
+    box-shadow: none;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 991.98px) {
+    .sidebar {
+        width: 320px;
+        max-width: 85vw;
+        transform: translateX(-100%);
+    }
+
+    .sidebar.show {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .main-content.expanded {
+        margin-left: 0;
+    }
+
+    .sidebar-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.4);
+        z-index: 1030;
+        display: none;
+    }
+    
+    .sidebar-backdrop.show {
+        display: block;
+    }
+
+    .toggle-btn {
+        display: none !important;
+    }
+}
